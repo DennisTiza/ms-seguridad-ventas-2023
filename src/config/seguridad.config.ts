@@ -1,3 +1,3 @@
 export namespace ConfiguracionSeguridad {
-  export const claveJNT: string = "Admin@2023*"
+  export const claveJWT: string = "Admin@2023*"
 }

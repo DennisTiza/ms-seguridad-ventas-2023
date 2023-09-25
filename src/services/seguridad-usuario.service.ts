@@ -1,5 +1,5 @@
 import { /* inject, */ BindingScope, injectable} from '@loopback/core';
-import {Credenciales, FactorDeAutenticacionPorCodigo, Login, Usuario} from '../models';
+import {Credenciales, FactorDeAutenticacionPorCodigo, Usuario} from '../models';
 import {repository} from '@loopback/repository';
 import {LoginRepository, UsuarioRepository} from '../repositories';
 import {ConfiguracionSeguridad} from '../config/seguridad.config';
@@ -79,7 +79,7 @@ export class SeguridadUsuarioService {
       role: usuario.rolId,
       email: usuario.correo
     };
-    let token = jwt.sign(datos, ConfiguracionSeguridad.claveJNT);
+    let token = jwt.sign(datos, ConfiguracionSeguridad.claveJWT);
     return token;
   }
 }
